@@ -1,0 +1,8 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: service-9000
+  cloud:
+    zookeeper:
+      connect-string: 192.168.64.110:2181

@@ -1,0 +1,40 @@
+server:
+  port: 9005
+spring:
+  application:
+    name: service-9005
+  cloud:
+    zookeeper:
+      connect-string: 192.168.64.110:2181
+    gateway:
+      routes:
+       - id: Resource_service-9001
+         uri: http://localhost:9001
+         predicates:
+             - Path=/user/**
+       - id: ShouQuan_service-9000
+         uri: http://localhost:9000
+         predicates:
+              - Path=/**
+
+token:
+  client_id: c
+  client_secret: cc
+  grant_type: password
+  username: macro
+  password: 123456
+  path: http://localhost:9000/oauth/token
+
+
+
+
+
+
+
+
+
+#      private String client_id;
+#      private String client_secret;
+#      private String grant_type;
+#      private String username;
+#      private String password;
